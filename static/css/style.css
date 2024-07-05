@@ -1,1 +1,25 @@
 /*create css here*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    border: 1px solid #000;
+}
+
+.grid-item {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-2-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
