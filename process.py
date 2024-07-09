@@ -24,7 +24,7 @@ def parse_answer(answer):
     parsed_ans = json.loads(answer)
     new_ans = {}
     for k, v in parsed_ans.items():
-        if type(v) != list:
+        if type(v) is not list:
             new_ans[k] = [v]
         else:
             new_ans[k] = v
