@@ -1,23 +1,5 @@
 import json
 
-def chat(client, message):
-    completion = client.chat.completions.create(
-        # 👇 这里指定 Kimi 的模型名称
-        model="moonshot-v1-8k",
-
-        messages=[
-            {"role": "user",
-             "content": message + ' According to the information above, construct a Business Canvas Model. '
-                                  'Return as json format for each of the keys: key_partners, key_activities, '
-                                  'key_resources, value_proposition, customer_relationship, channels, customer_segments'
-                                  ', cost_structure, revenue_streams.'}
-        ],
-
-        response_format={"type": "json_object"},
-        n=1
-
-    )
-    return completion.choices[0].message.content
 
 def parse_answer(answer):
     # TODO: parse the response by keys of the BMC
