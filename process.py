@@ -22,7 +22,13 @@ def chat(client, message):
 def parse_answer(answer):
     # TODO: parse the response by keys of the BMC
     parsed_ans = json.loads(answer)
-    return parsed_ans
+    new_ans = {}
+    for k, v in parsed_ans.items():
+        if type(v) != list:
+            new_ans[k] = [v]
+        else:
+            new_ans[k] = v
+    return new_ans
     # return {
     #     "key_partners": "this is some random answer",
     #     "key_activities": "this is some random answer"*5,

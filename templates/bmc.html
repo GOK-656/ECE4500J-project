@@ -21,42 +21,78 @@
         <!-- Upper part -->
         <div class="key-partners grid-item span-2-2">
             <h4>Key Partners</h4>
-            <p>{{ key_partners }}</p>
+            <ol>
+                {% for item in key_partners %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="key-activities grid-item span-2">
             <h4>Key Activities</h4>
-            <p>{{ key_activities }}</p>
+            <ol>
+                {% for item in key_activities %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="value-proposition grid-item span-2-2">
             <h4>Value Proposition</h4>
-            <p>{{ value_proposition }}</p>
+            <ol>
+                {% for item in value_proposition %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="customer-relationship grid-item span-2">
             <h4>Customer Relationship</h4>
-            <p>{{ customer_relationship }}</p>
+            <ol>
+                {% for item in customer_relationship %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="customer-segments grid-item span-2-2">
             <h4>Customer Segments</h4>
-            <p>{{ customer_segments }}</p>
+            <ol>
+                {% for item in customer_segments %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
 
         <!-- Lower part -->
         <div class="key-resources grid-item span-2">
             <h4>Key Resources</h4>
-            <p>{{ key_resources }}</p>
+            <ol>
+                {% for item in key_resources %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="channels grid-item span-2">
             <h4>Channels</h4>
-            <p>{{ channels }}</p>
+            <ol>
+                {% for item in channels %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
 
         <div class="cost-structure grid-item span-5">
             <h4>Cost Structure</h4>
-            <p>{{ cost_structure }}</p>
+            <ol>
+                {% for item in cost_structure %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
         <div class="revenue-streams grid-item span-5">
             <h4>Revenue Streams</h4>
-            <p>{{ revenue_streams }}</p>
+            <ol>
+                {% for item in revenue_streams %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 
