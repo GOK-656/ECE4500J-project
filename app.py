@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template, request, url_for
 from client import Client
 from process import parse_answer
+import time
 
 app = Flask(__name__)
 
@@ -15,7 +16,9 @@ def start():  # put application's code here
 def generate():
     if request.method == 'POST':
         message = request.form['idea']
+        start_time = time.time()
         answer = client.chat(message)
+        end_time = time.time()
         print(answer)
         answer = parse_answer(answer)
         return render_template('bmc.html',
@@ -27,7 +30,8 @@ def generate():
                                channels=answer['channels'],
                                customer_segments=answer['customer_segments'],
                                cost_structure=answer['cost_structure'],
-                               revenue_streams=answer['revenue_streams'])
+                               revenue_streams=answer['revenue_streams'],
+                               response_time=round(end_time-start_time, 2))
 
     return render_template('generate.html')
 
@@ -45,7 +49,9 @@ def submit():
         q9 = request.form['question9']
         # TODO: construct a message to send to the chatbot
         message = f"Construct a Business Canvas Model according to the information: {q1} {q2} {q3} {q4} {q5} {q6} {q7} {q8} {q9}"
+        start_time = time.time()
         answer = client.chat(message)
+        end_time = time.time()
         print(answer)
         answer = parse_answer(answer)
         return render_template('bmc.html',
@@ -57,7 +63,8 @@ def submit():
                                channels=answer['channels'],
                                customer_segments=answer['customer_segments'],
                                cost_structure=answer['cost_structure'],
-                               revenue_streams=answer['revenue_streams'])
+                               revenue_streams=answer['revenue_streams'],
+                               response_time=round(end_time-start_time, 2))
     return render_template('question.html')
 
 if __name__ == '__main__':
