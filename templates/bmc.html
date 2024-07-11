@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Business Model Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Model Canvas Template">
+    <link href='http://fonts.googleapis.com/css?family=Headland+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<nav>
+    <a href="/">Home</a>
+    <a href="/generate">Generate</a>
+    <a href="/submit">Guide</a>
+</nav>
+<body>
+<div class="container">
+    <h1>The Business Model Canvas</h1>
+    <!-- Canvas -->
+    <div id="bizcanvas" class="grid-container">
+        <!-- Upper part -->
+        <div class="key-partners grid-item span-2-2">
+            <h4>Key Partners</h4>
+            <ol>
+                {% for item in key_partners %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="key-activities grid-item span-2">
+            <h4>Key Activities</h4>
+            <ol>
+                {% for item in key_activities %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="value-proposition grid-item span-2-2">
+            <h4>Value Proposition</h4>
+            <ol>
+                {% for item in value_proposition %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="customer-relationship grid-item span-2">
+            <h4>Customer Relationship</h4>
+            <ol>
+                {% for item in customer_relationship %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="customer-segments grid-item span-2-2">
+            <h4>Customer Segments</h4>
+            <ol>
+                {% for item in customer_segments %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <!-- Lower part -->
+        <div class="key-resources grid-item span-2">
+            <h4>Key Resources</h4>
+            <ol>
+                {% for item in key_resources %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="channels grid-item span-2">
+            <h4>Channels</h4>
+            <ol>
+                {% for item in channels %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="cost-structure grid-item span-5">
+            <h4>Cost Structure</h4>
+            <ol>
+                {% for item in cost_structure %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="revenue-streams grid-item span-5">
+            <h4>Revenue Streams</h4>
+            <ol>
+                {% for item in revenue_streams %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+
+    <!-- /Canvas -->
+    <div class="response-time">
+        <p>Response time: {{ response_time }}s</p>
+    </div>
+</div>
+
+</body>
+</html>
