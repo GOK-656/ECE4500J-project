@@ -101,6 +101,13 @@
     <div class="response-time">
         <p>Response time: {{ response_time }}s</p>
     </div>
+
+    <div class="modify">
+        <form action="/generate" method="post">
+            <input type="text" name="idea" placeholder="Modify response">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </div>
 
 </body>
