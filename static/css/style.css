@@ -91,7 +91,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-.container {
+.container-index {
     display: flex;
     flex-direction: column;
     align-items: center;
