@@ -1,0 +1,140 @@
+{
+    "industry": "medical devices",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Hospitals and clinics",
+                "examples": []
+            },
+            {
+                "type": "Medical professionals",
+                "examples": [
+                    "Lena Hagman at Getinge",
+                    "Victoria Carr-Brendel at Sonova",
+                    "Carrie Anderson at Integra LifeSciences",
+                    "Valerie Asbury at LifeScan",
+                    "Rebeccah Brown at MiMedx Group"
+                ]
+            },
+            {
+                "type": "Research institutions",
+                "examples": [
+                    "Institute for Medical Engineering & Science (IMES) at MIT",
+                    "Stanford Medicine",
+                    "Cleveland Clinic Lerner Research Institute"
+                ]
+            },
+            {
+                "type": "Regulatory bodies",
+                "examples": [
+                    "U.S. Food and Drug Administration (FDA)",
+                    "European Medicines Agency (EMA)",
+                    "Medical Device Single Audit Program (MDSAP)",
+                    "Health Canada",
+                    "Japanese Pharmaceuticals and Medical Devices Agency (PMDA)",
+                    "China Food and Drug Administration (CFDA)",
+                    "Australian Therapeutic Goods Administration (TGA)"
+                ]
+            },
+            {
+                "type": "Suppliers of medical components",
+                "examples": [
+                    "Qosina",
+                    "Paragon Medical",
+                    "Cadence Inc",
+                    "Medtronic",
+                    "GE Healthcare"
+                ]
+            }
+        ],
+        "key_activities": [
+            "Research and development",
+            "Clinical trials",
+            "Regulatory compliance",
+            "Manufacturing",
+            "Sales and marketing"
+        ],
+        "key_resources": [
+            {
+                "type": "R&D team",
+                "examples": [
+                    "Abbott Laboratories",
+                    "Boston Scientific",
+                    "Stryker"
+                ]
+            },
+            {
+                "type": "Manufacturing facilities",
+                "examples": [
+                    "Qosina",
+                    "Paragon Medical",
+                    "Cadence Inc",
+                    "Medtronic",
+                    "GE Healthcare"
+                ]
+            },
+            {
+                "type": "Clinical trial partnerships",
+                "examples": [
+                    "Partnerships with leading hospitals",
+                    "Collaborations with clinical research organizations (CROs)",
+                    "Access to patient populations for trials"
+                ]
+            },
+            {
+                "type": "Regulatory expertise",
+                "examples": []
+            },
+            {
+                "type": "Distribution network",
+                "examples": [
+                    "Global logistics partners",
+                    "Regional distribution centers",
+                    "E-commerce platforms for direct sales"
+                ]
+            }
+        ],
+        "value_propositions": [
+            "Innovative and reliable medical devices",
+            "Improved patient outcomes",
+            "Ease of use for medical professionals",
+            "Compliance with safety standards",
+            "Cost-effective solutions"
+        ],
+        "customer_relationships": [
+            "Direct sales force",
+            "Customer training programs",
+            "Technical support",
+            "Regular follow-ups",
+            "Feedback systems"
+        ],
+        "channels": [
+            "Direct sales",
+            "Medical device distributors",
+            "Online platforms",
+            "Medical conferences and trade shows",
+            "Partnerships with healthcare providers"
+        ],
+        "customer_segments": [
+            "Hospitals",
+            "Clinics",
+            "Individual medical practitioners",
+            "Home healthcare providers",
+            "Government health departments"
+        ],
+        "cost_structure": [
+            "R&D expenses",
+            "Manufacturing costs",
+            "Regulatory compliance costs",
+            "Marketing and sales expenses",
+            "Distribution costs"
+        ],
+        "revenue_streams": [
+            "Direct device sales",
+            "Maintenance and service contracts",
+            "Leasing models",
+            "Licensing of technology",
+            "Consulting services"
+        ]
+    }
+}
