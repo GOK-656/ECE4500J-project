@@ -1,0 +1,73 @@
+{
+    "industry": "Traditional Retail",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Suppliers and manufacturers",
+                "examples": ["Kole Imports", "DollarDays"]
+            },
+            {
+                "type": "Logistics and delivery companies",
+                "examples": ["FedEx", "UPS", "DHL"]
+            },
+            {
+                "type": "Marketing agencies",
+                "examples": ["Ogilvy", "Wunderman Thompson","Havas Media"]
+            },
+            {
+                "type": "Financial institutions",
+                "examples": ["Wells Fargo", "JPMorgan Chase"]
+            }
+        ],
+        "key_activities": [
+            "Merchandising",
+            "Inventory management",
+            "Sales and marketing",
+            "Customer service",
+            "Logistics and distribution"
+        ],
+        "key_resources": [
+            "Retail locations",
+            "Inventory",
+            "Sales and marketing team",
+            "Customer service team"
+        ],
+        "value_propositions": [
+            "Wide range of products",
+            "Convenient shopping experience",
+            "Competitive pricing",
+            "High-quality customer service",
+            "Fast and reliable delivery"
+        ],
+        "customer_relationships": [
+            "Loyalty programs",
+            "Personalized marketing",
+            "Customer support",
+            "Community engagement",
+            "Social media interaction"
+        ],
+        "channels": [
+            "Physical retail stores"
+        ],
+        "customer_segments": [
+            "Individual consumers",
+            "Small businesses",
+            "Corporate clients",
+            "Local community members"
+        ],
+        "cost_structure": [
+            "Inventory costs",
+            "Retail space rental",
+            "Marketing and advertising expenses",
+            "Logistics and delivery costs",
+            "Customer service costs"
+        ],
+        "revenue_streams": [
+            "Direct product sales",
+            "Subscription services",
+            "Advertising revenue",
+            "Affiliate commissions",
+            "Membership fees"
+        ]
+    }
+}

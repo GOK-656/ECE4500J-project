@@ -1,0 +1,74 @@
+{
+    "industry": "investment and asset management",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Financial institutions",
+                "examples": ["J.P. Morgan Chase & Co.", "Goldman Sachs", "BlackRock"]
+            },
+            {
+                "type": "Technology providers",
+                "examples": ["Fiserv", "Envestnet", "SS&C Technologies"]
+            },
+            {
+                "type": "Research and analysis firms",
+                "examples": []
+            }
+        ],
+        "key_activities": [
+            "Investment research and analysis",
+            "Portfolio management",
+            "Client advisory services",
+            "Risk management",
+            "Marketing and sales"
+        ],
+        "key_resources": [
+            "Investment professionals",
+            "Financial technology platforms",
+            "Market research data",
+            "Client relationship management systems"
+        ],
+        "value_propositions": [
+            "Expert investment advice",
+            "Diversified investment portfolios",
+            "High returns on investment",
+            "Personalized financial planning",
+            "Transparency and trust"
+        ],
+        "customer_relationships": [
+            "Dedicated financial advisors",
+            "Regular performance reports",
+            "Client education programs",
+            "24/7 customer support",
+            "Personalized investment strategies"
+        ],
+        "channels": [
+            "Direct consultations",
+            "Online investment platforms",
+            "Financial advisory firms",
+            "Mobile apps",
+            "Marketing campaigns"
+        ],
+        "customer_segments": [
+            "Individual investors",
+            "High net worth individuals",
+            "Institutional investors",
+            "Corporate clients",
+            "Pension funds"
+        ],
+        "cost_structure": [
+            "Salaries and bonuses",
+            "Technology and infrastructure costs",
+            "Marketing and advertising expenses",
+            "Research and analysis costs",
+            "Regulatory compliance costs"
+        ],
+        "revenue_streams": [
+            "Management fees",
+            "Performance fees",
+            "Advisory fees",
+            "Transaction fees",
+            "Commission on investment products"
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "industry": "pharmaceutical R&D",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Academic institutions",
+                "examples": []
+            },
+            {
+                "type": "Contract research organizations",
+                "examples": []
+            },
+            {
+                "type": "Regulatory agencies",
+                "examples": []
+            },
+            {
+                "type": "Biotechnology firms",
+                "examples": ["Amgen", "Gilead Sciences", "Regeneron Pharmaceuticals", "Biogen", "Vertex Pharmaceuticals"
+                ]
+            },
+            {
+                "type": "Healthcare providers",
+                "examples": []
+            }
+        ],
+        "key_activities": [
+            "Drug discovery",
+            "Preclinical testing",
+            "Clinical trials",
+            "Regulatory approval"
+        ],
+        "key_resources": [
+            "Research laboratories",
+            "Clinical trial networks",
+            "Regulatory expertise",
+            "Intellectual property"
+        ],
+        "value_propositions": [
+            "Innovative and effective drugs",
+            "Treatment for unmet medical needs",
+            "Safety and efficacy",
+            "Regulatory compliance",
+            "Access to cutting-edge research"
+        ],
+        "customer_relationships": [
+            "Medical liaison programs",
+            "Patient assistance programs",
+            "Regular consultations with healthcare professionals",
+            "Educational initiatives",
+            "Technical support"
+        ],
+        "channels": [
+            "Direct sales to healthcare providers",
+            "Partnerships with healthcare institutions",
+            "Online platforms",
+            "Pharmaceutical distributors",
+            "Medical conferences and journals"
+        ],
+        "customer_segments": [
+            "Hospitals",
+            "Clinics",
+            "Pharmacies",
+            "Healthcare providers",
+            "Patients with specific medical conditions"
+        ],
+        "cost_structure": [
+            "R&D expenses",
+            "Clinical trial costs",
+            "Regulatory compliance costs",
+            "Manufacturing costs",
+            "Marketing and sales expenses"
+        ],
+        "revenue_streams": [
+            "Drug sales",
+            "Licensing agreements",
+            "Research grants",
+            "Partnership deals",
+            "Consulting services"
+        ]
+    }
+}

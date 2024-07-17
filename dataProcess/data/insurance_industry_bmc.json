@@ -1,0 +1,75 @@
+{
+    "industry": "insurance",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Reinsurance companies",
+                "examples": []
+            },
+            {
+                "type": "Healthcare providers",
+                "examples": ["Kaiser Permanent", "Humana", "Cigna", "Oscar Health"
+                ]
+            },
+            {
+                "type": "Automotive service providers",
+                "examples": ["Midas", "Jiffy Lube", "Firestone Complete Auto Care", "Meineke Car Care Centers"
+            ]
+            }
+        ],
+        "key_activities": [
+            "Risk assessment and underwriting",
+            "Claims processing",
+            "Policy administration",
+            "Customer service",
+            "Marketing and sales"
+        ],
+        "key_resources": [
+            "Underwriting expertise",
+            "Claims processing systems",
+            "Customer databases"
+        ],
+        "value_propositions": [
+            "Comprehensive coverage options",
+            "Financial protection",
+            "Customized insurance solutions",
+            "Efficient claims processing",
+            "Competitive premiums"
+        ],
+        "customer_relationships": [
+            "Personalized service",
+            "Dedicated account managers",
+            "24/7 customer support",
+            "Online self-service portals",
+            "Loyalty programs"
+        ],
+        "channels": [
+            "Direct sales",
+            "Brokerage firms",
+            "Online platforms",
+            "Mobile apps",
+            "Partner networks"
+        ],
+        "customer_segments": [
+            "Individual policyholders",
+            "Small and medium-sized enterprises",
+            "Large corporations",
+            "Government entities",
+            "Affinity groups"
+        ],
+        "cost_structure": [
+            "Claims payouts",
+            "Administrative costs",
+            "Marketing and sales expenses",
+            "Regulatory compliance costs",
+            "IT and infrastructure expenses"
+        ],
+        "revenue_streams": [
+            "Premium payments",
+            "Investment income",
+            "Fees for additional services",
+            "Reinsurance recoveries",
+            "Commission from partner services"
+        ]
+    }
+}

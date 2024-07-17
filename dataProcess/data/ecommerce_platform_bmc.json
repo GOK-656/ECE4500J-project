@@ -1,0 +1,79 @@
+{
+    "industry": "e-commerce platforms",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Product suppliers",
+                "examples": ["Kole Imports", "DollarDays"]
+            },
+            {
+                "type": "Payment processors",
+                "examples": ["PayPal", "Stripe", "Square"]
+            },
+            {
+                "type": "Logistics and delivery partners",
+                "examples": ["FedEx", "UPS", "DHL"]
+            },
+            {
+                "type": "Marketing and advertising agencies",
+                "examples": ["Thrive Internet Marketing Agency", "LYFE Marketing", "Wpromote"]
+            }
+        ],
+        "key_activities": [
+            "Platform development and maintenance",
+            "Merchant onboarding",
+            "Customer acquisition",
+            "Payment processing",
+            "Order fulfillment"
+        ],
+        "key_resources": [
+            "E-commerce platform",
+            "Technology infrastructure",
+            "Development team",
+            "Customer support team",
+            "Marketing and sales team"
+        ],
+        "value_propositions": [
+            "Wide variety of products",
+            "User-friendly shopping experience",
+            "Secure payment processing",
+            "Fast and reliable delivery",
+            "Customer reviews and ratings"
+        ],
+        "customer_relationships": [
+            "Customer support",
+            "Loyalty programs",
+            "Personalized recommendations",
+            "Community engagement",
+            "Social media interaction"
+        ],
+        "channels": [
+            "Website",
+            "Mobile app",
+            "Email marketing",
+            "Social media",
+            "Affiliate networks"
+        ],
+        "customer_segments": [
+            "Individual consumers",
+            "Small and medium-sized businesses",
+            "Large enterprises",
+            "Niche markets",
+            "International customers"
+        ],
+        "cost_structure": [
+            "Platform development and maintenance costs",
+            "Marketing and advertising expenses",
+            "Payment processing fees",
+            "Logistics and delivery costs",
+            "Customer service costs"
+        ],
+        "revenue_streams": [
+            "Transaction fees",
+            "Subscription fees",
+            "Advertising revenue",
+            "Premium services",
+            "Affiliate commissions"
+        ]
+    }
+}

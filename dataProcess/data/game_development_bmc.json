@@ -1,0 +1,79 @@
+{
+    "industry": "game development",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Art and design studios",
+                "examples": ["Room 8 Studio", "iLogos"]
+            },
+            {
+                "type": "Music and sound production companies",
+                "examples": ["Keywords Studios", "Soundelux Design Music Group", "Hexany Audio"]
+            },
+            {
+                "type": "Marketing and PR agencies",
+                "examples": ["TriplePoint PR", "Zebra Partners", "ONE PR Studio"]
+            },
+            {
+                "type": "Publishing partners",
+                "examples": ["Devolver Digital", "Annapurna Interactive", "Raw Fury"]
+            }
+        ],
+        "key_activities": [
+            "Game design and development",
+            "Art and animation",
+            "Programming",
+            "Testing and QA",
+            "Marketing and distribution"
+        ],
+        "key_resources": [
+            "Development team",
+            "Game engine and tools",
+            "Art and sound assets",
+            "Intellectual property",
+            "Funding and investment"
+        ],
+        "value_propositions": [
+            "Engaging and immersive gameplay",
+            "High-quality graphics and sound",
+            "Innovative game mechanics",
+            "Cross-platform compatibility",
+            "Continuous updates and support"
+        ],
+        "customer_relationships": [
+            "Player support",
+            "Community engagement",
+            "Social media interaction",
+            "Regular updates and patches",
+            "Feedback and beta testing programs"
+        ],
+        "channels": [
+            "Digital distribution platforms",
+            "Retail stores",
+            "Company website",
+            "Social media",
+            "Gaming conventions and events"
+        ],
+        "customer_segments": [
+            "Casual gamers",
+            "Hardcore gamers",
+            "Mobile gamers",
+            "Console gamers",
+            "PC gamers"
+        ],
+        "cost_structure": [
+            "Development costs",
+            "Marketing and advertising expenses",
+            "Licensing fees",
+            "Server and infrastructure costs",
+            "Support and maintenance costs"
+        ],
+        "revenue_streams": [
+            "Game sales",
+            "In-game purchases",
+            "Subscription services",
+            "Advertising revenue",
+            "Merchandise sales"
+        ]
+    }
+}

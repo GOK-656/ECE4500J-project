@@ -26,15 +26,7 @@
             },
             {
                 "type": "Regulatory bodies",
-                "examples": [
-                    "U.S. Food and Drug Administration (FDA)",
-                    "European Medicines Agency (EMA)",
-                    "Medical Device Single Audit Program (MDSAP)",
-                    "Health Canada",
-                    "Japanese Pharmaceuticals and Medical Devices Agency (PMDA)",
-                    "China Food and Drug Administration (CFDA)",
-                    "Australian Therapeutic Goods Administration (TGA)"
-                ]
+                "examples": []
             },
             {
                 "type": "Suppliers of medical components",

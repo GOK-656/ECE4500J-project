@@ -1,0 +1,79 @@
+{
+    "industry": "industrial equipment manufacturing",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Raw material supplier",
+                "examples": ["Mintec", "Grainger", "Thomasnet"]
+            },
+            {
+                "type": "Component and parts suppliers",
+                "examples": ["Tradewheel", "MFG.com", "GlobalSpec"]
+            },
+            {
+                "type": "Technology providers",
+                "examples": []
+            },           
+            {
+                "type": "Distributors and resellers",
+                "examples": ["Alibaba", "Amazon Business"]
+            }
+        ],
+        "key_activities": [
+            "Product design and engineering",
+            "Manufacturing and assembly",
+            "Quality assurance and testing",
+            "Supply chain management",
+            "Sales and marketing"
+        ],
+        "key_resources": [
+            "Manufacturing facilities",
+            "R&D laboratories",
+            "Skilled workforce",
+            "Supply chain network",
+            "Intellectual property"
+        ],
+        "value_propositions": [
+            "High-performance and durable equipment",
+            "Customizable solutions",
+            "Innovative technology",
+            "Energy efficiency and sustainability",
+            "Comprehensive support and maintenance services"
+        ],
+        "customer_relationships": [
+            "Direct sales force",
+            "Technical support",
+            "Customer training programs",
+            "Regular follow-ups and feedback",
+            "Loyalty programs"
+        ],
+        "channels": [
+            "Direct sales",
+            "Authorized distributors",
+            "Online sales platforms",
+            "Trade shows and industry events",
+            "Marketing campaigns"
+        ],
+        "customer_segments": [
+            "Manufacturing companies",
+            "Construction firms",
+            "Energy and utilities companies",
+            "Mining and extraction companies",
+            "Government agencies"
+        ],
+        "cost_structure": [
+            "Raw material and component costs",
+            "Manufacturing and assembly costs",
+            "R&D expenses",
+            "Marketing and sales expenses",
+            "Distribution and logistics costs"
+        ],
+        "revenue_streams": [
+            "Equipment sales",
+            "Maintenance and service contracts",
+            "Spare parts sales",
+            "Customization fees",
+            "Leasing and rental services"
+        ]
+    }
+}

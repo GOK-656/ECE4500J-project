@@ -1,0 +1,79 @@
+{
+    "industry": "automotive manufacturing",
+    "bmc": {
+        "key_partners": [
+            {
+                "type": "Raw material suppliers",
+                "examples": ["Rio Tinto","Alcoa","BHP","ArcelorMittal"]
+            },
+            {
+                "type": "Technology providers",
+                "examples": ["Bosch", "Denso","ZF Friedrichshafen", "Magna International"]
+            },
+            {
+                "type": "Dealerships and distributors",
+                "examples": []
+            },
+            {
+                "type": "Research and development partners",
+                "examples": ["MIT", "Stanford", "University of Michigan"]
+            }
+        ],
+        "key_activities": [
+            "Vehicle design and engineering",
+            "Manufacturing and assembly",
+            "Quality control and testing",
+            "Supply chain management",
+            "Marketing and sales"
+        ],
+        "key_resources": [
+            "Manufacturing plants",
+            "R&D facilities",
+            "Skilled workforce",
+            "Supply chain network",
+            "Brand reputation"
+        ],
+        "value_propositions": [
+            "High-quality and reliable vehicles",
+            "Innovative design and technology",
+            "Safety and compliance",
+            "Fuel efficiency and sustainability",
+            "Comprehensive after-sales service"
+        ],
+        "customer_relationships": [
+            "Dealership network",
+            "Customer support services",
+            "Warranty and maintenance programs",
+            "Customer feedback systems",
+            "Loyalty programs"
+        ],
+        "channels": [
+            "Authorized dealerships",
+            "Online sales platforms",
+            "Direct sales to fleet customers",
+            "Auto shows and exhibitions",
+            "Marketing campaigns"
+        ],
+        "customer_segments": [
+            "Individual consumers",
+            "Corporate fleet buyers",
+            "Government agencies",
+            "Rental and leasing companies",
+            "Export markets"
+        ],
+        "cost_structure": [
+            "Raw material and component costs",
+            "Manufacturing and assembly costs",
+            "R&D expenses",
+            "Marketing and sales expenses",
+            "Distribution and logistics costs"
+        ],
+        "revenue_streams": [
+            "Vehicle sales",
+            "After-sales services",
+            "Financing and insurance products",
+            "Licensing and partnerships",
+            "Spare parts sales"
+        ]
+    }
+}

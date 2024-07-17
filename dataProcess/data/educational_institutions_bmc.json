@@ -1,0 +1,66 @@
+{
+    "industry": "educational institutions",
+    "bmc": {
+        "key_partners": [
+            "Educational content providers",
+            "Community organizations",
+            "Experienced teachers"
+        ],
+        "key_activities": [
+            "Curriculum development",
+            "Teaching and training",
+            "Student assessment",
+            "Research and innovation",
+            "Community engagement"
+        ],
+        "key_resources": [
+            "Qualified faculty and staff",
+            "Educational facilities",
+            "Digital learning platforms",
+            "Library and research resources",
+            "Funding and grants"
+        ],
+        "value_propositions": [
+            "High-quality education",
+            "Skill development and training",
+            "Accredited programs",
+            "Research opportunities",
+            "Community and industry engagement"
+        ],
+        "customer_relationships": [
+            "Student advising",
+            "Alumni networks",
+            "Parent-teacher associations",
+            "Career counseling",
+            "Feedback and surveys"
+        ],
+        "channels": [
+            "On-campus classes",
+            "Online courses",
+            "Educational partnerships",
+            "Community outreach programs",
+            "Marketing campaigns"
+        ],
+        "customer_segments": [
+            "Students",
+            "Parents",
+            "Employers",
+            "Research organizations",
+            "Government agencies"
+        ],
+        "cost_structure": [
+            "Salaries and benefits",
+            "Facility maintenance",
+            "Technology and equipment",
+            "Marketing and recruitment",
+            "Research and development"
+        ],
+        "revenue_streams": [
+            "Tuition fees",
+            "Government funding",
+            "Research grants",
+            "Donations and endowments",
+            "Partnership programs"
+        ]
+    }
+}
