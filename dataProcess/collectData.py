@@ -16,6 +16,7 @@ api_urls = {
     ]
 }
 
+
 def fetch_posts(api_url):
     response = requests.get(api_url)
     if response.status_code == 200:
@@ -23,11 +24,11 @@ def fetch_posts(api_url):
         posts_data = []
         for post in posts:
             title = post.get('title', {}).get('rendered', 'No title')
-            #link = post.get('link', 'No link')
+            link = post.get('link', 'No link')
             summary = post.get('excerpt', {}).get('rendered', 'No summary')
             posts_data.append({
                 'title': title,
-                #'link': link,
+                'link': link,
                 'summary': summary
             })
         return posts_data
@@ -41,9 +42,11 @@ def main():
         for api_url in urls:
             posts_data = fetch_posts(api_url)
             all_posts.extend(posts_data)
-        
+
         with open(f'{category}.json', 'w', encoding='utf-8') as file:
             json.dump(all_posts, file, ensure_ascii=False, indent=4)
 
+
 if __name__ == '__main__':
     main()
+

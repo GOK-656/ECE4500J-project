@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMC Generator</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<nav>
+    <a href="/">Home</a>
+    <a href="/generate">Generate</a>
+    <a href="/submit">Guide</a>
+</nav>
+<body>
+<!-- a form with six questions -->
+<div class="form-container">
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="question1">What specific customer problem does your product or service solve, and how does it differentiate from competitors?</label>
+                <input type="text" id="question1" name="question1">
+            </div>
+            <div class="form-group">
+                <label for="question2">Who are your primary target customers, and what are their key characteristics and needs that your offering addresses?</label>
+                <input type="text" id="question2" name="question2">
+            </div>
+            <div class="form-group">
+                <label for="question3">Which primary channel will you use to reach your target customers, are there any alternatives and why is this the most effective method?</label>
+                <input type="text" id="question3" name="question3">
+            </div>
+            <div class="form-group">
+                <label for="question4">What type of relationship will you establish with your customers, and what strategies will you use to maintain and enhance these relationships?</label>
+                <input type="text" id="question4" name="question4">
+            </div>
+            <div class="form-group">
+                <label for="question5">What is your main revenue model, and why is it appropriate for your target market and value proposition?</label>
+                <input type="text" id="question5" name="question5">
+            </div>
+            <div class="form-group">
+                <label for="question6">Identify the essential resources needed to deliver your value proposition. How do you plan to secure and manage these resources?</label>
+                <input type="text" id="question6" name="question6">
+            </div>
+            <div class="form-group">
+                <label for="question7">Who are your indispensable partners or suppliers, what will they provide, and how are these partnerships structured to support your business objectives?</label>
+                <input type="text" id="question7" name="question7">
+            </div>
+            <div class="form-group">
+                <label for="question8">What are the critical activities necessary to support your business model? How do you plan to excel at these activities?</label>
+                <input type="text" id="question8" name="question8">
+            </div>
+            <div class="form-group">
+                <label for="question9">What are your significant expected costs, and how do you plan to manage efficiency while maintaining quality?</label>
+                <input type="text" id="question9" name="question9">
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
