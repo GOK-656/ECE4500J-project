@@ -1,7 +1,7 @@
 
 
 
-I have divided the industry into 8 sectors. 
+I have divided the industry into 7 sectors. 
 
 
 ### 1. Healthcare
@@ -20,17 +20,14 @@ I have divided the industry into 8 sectors.
 - Software Development
 - Hardware manufacturing
 
-### 5. Energy
-- Renewable Energy
-
-### 6. Education
+### 5. Education
 - Educational Institutions
 
-### 7. Retail and E-Commerce
+### 6. Retail and E-Commerce
 - Traditional Retail
 - E-Commerce Platforms
 
-### 8. Entertainment and media
+### 7. Entertainment and media
 - Game Development
 - Film and TV Production
 
