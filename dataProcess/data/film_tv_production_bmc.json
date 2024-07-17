@@ -1,0 +1,67 @@
+{
+    "industry": "film and TV production",
+    "bmc": {
+        "key_partners": [
+            "Scriptwriters",
+            "Directors and producers",
+            "Cinematographers and editors",
+            "Marketing and PR agencies"
+        ],
+        "key_activities": [
+            "Scriptwriting",
+            "Pre-production planning",
+            "Filming",
+            "Post-production editing",
+            "Marketing and distribution"
+        ],
+        "key_resources": [
+            "Production equipment",
+            "Filming locations",
+            "Creative talent",
+            "Editing software and facilities",
+            "Funding and investment"
+        ],
+        "value_propositions": [
+            "High-quality storytelling",
+            "Visually stunning content",
+            "Engaging and entertaining productions",
+            "Access to top talent",
+            "Wide distribution channels"
+        ],
+        "customer_relationships": [
+            "Fan engagement",
+            "Social media interaction",
+            "Behind-the-scenes content",
+            "Merchandise and collectibles",
+            "Premiere and event access"
+        ],
+        "channels": [
+            "Theatrical releases",
+            "Television broadcasting",
+            "Streaming platforms",
+            "DVD and Blu-ray sales",
+            "Film festivals and events"
+        ],
+        "customer_segments": [
+            "General audiences",
+            "Genre enthusiasts",
+            "Streaming subscribers",
+            "International viewers",
+            "Film critics and reviewers"
+        ],
+        "cost_structure": [
+            "Production costs",
+            "Marketing and advertising expenses",
+            "Distribution costs",
+            "Talent salaries",
+            "Equipment and location fees"
+        ],
+        "revenue_streams": [
+            "Box office sales",
+            "Streaming subscriptions",
+            "Syndication deals",
+            "Merchandise sales",
+            "Advertising revenue"
+        ]
+    }
+}
