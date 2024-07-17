@@ -19,7 +19,6 @@ def generate():
         start_time = time.time()
         answer = client.chat(message)
         end_time = time.time()
-        print(answer)
         answer = parse_answer(answer)
         return render_template('bmc.html',
                                key_partners=answer['key_partners'],
