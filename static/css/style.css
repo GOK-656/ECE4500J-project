@@ -1,44 +1,99 @@
-/*create css here*/
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 10px;
-    border: 1px solid #000;
+:root {
+    /* Color scheme */
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --link-color: #fff;
+    --border-color: #ccc;
+    
+    /* Spacing */
+    --gap-size: 10px;
+    --padding-standard: 10px;
 }
 
-.grid-item {
-    border: 1px solid #000;
-    padding: 10px;
+header {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 20px;
 }
 
-.span-2 {
-    grid-column: span 2;
+h1 {
+    color: #000000;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.span-2-2 {
-    grid-column: span 2;
-    grid-row: span 2;
+p {
+    color: #555;
+    font-size: 18px;
 }
 
-.span-5 {
-    grid-column: span 5;
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.how-it-works {
+    background-color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.step {
+    width: 30%;
+    text-align: center;
+}
+
+.step img {
+    width: 50px; /* Adjust based on actual icon size */
+}
+
+.step h3 {
+    color: #000;
+    font-size: 20px;
+}
+
+.step p {
+    color: #666;
+    font-size: 14px;
+}
+
+.container {
+    text-align: center;   /* Centers all inline content, including images */
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
 }
 
 nav {
-    background-color: #007BFF;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
+    background-color: #007BFF;  /* Blue background */
+    padding: 10px 20px;         /* Padding around the content */
+    display: flex;              /* Enables flexbox */
+    justify-content: space-between; /* Positions children on opposite ends */
+    align-items: center;        /* Centers items vertically */
+}
+
+.nav-title {
+    color: white;              /* White color for the title */
+    font-size: 24px;           /* Font size of the title */
+    font-weight: bold;         /* Bold font weight for emphasis */
+}
+
+.nav-links {
+    display: flex;             /* Display links in a flex row */
 }
 
 nav a {
-    color: #fff;
+    color: var(--link-color);
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
@@ -48,8 +103,37 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: flex-end;  /* Ensures all links within are right-aligned */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: var(--gap-size);
+    border: 1px solid #000;
+}
+
+.grid-item {
+    border: 1px solid #000;
+    padding: var(--padding-standard);
+}
+
+.span-2, .span-2-2, .span-5 {
+    grid-column: span 2;
+}
+
+.span-2-2 {
+    grid-row: span 2;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
+
 .form-container {
-    background-color: #fff;
+    background-color: var(--link-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -69,9 +153,9 @@ label {
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: var(--padding-standard);
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 14px;
 }
@@ -79,16 +163,16 @@ input[type="text"] {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007BFF;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 4px;
-    color: #fff;
+    color: var(--link-color);
     font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
 }
 
 .container-index {
@@ -118,7 +202,7 @@ button:hover {
     margin: 20px auto;
     font-size: 16px;
     color: white;
-    background-color: #007BFF;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 4px;
     text-decoration: none;
@@ -127,5 +211,5 @@ button:hover {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
 }

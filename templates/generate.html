@@ -5,16 +5,43 @@
     <title>Multimodel BMC</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
-<nav>
+<!--<nav>
     <a href="/">Home</a>
     <a href="/generate">Generate</a>
     <a href="/submit">Guide</a>
-</nav>
+</nav>-->
 <body>
+<nav>
+    <div class="nav-title">Software Platform for the Development and Testing of Entrepreneurship Ideas</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/generate">Generate</a>
+        <a href="/submit">Guide</a>
+    </div>
+</nav>
 <!-- textbox for user to input their idea -->
 <h1>What is your idea?</h1>
+<p>Please enter your idea below.</p>
+<p><b>Sample input: </b><br>My business offers virtual reality (VR) technology to help clients design or renovate 
+    their homes. Customers can use VR headsets to walk through digital mockups of their homes, experimenting 
+    with different layouts, furniture arrangements, and decor styles before making any real-life changes. 
+    This service would cater to homeowners, real estate agents, and interior designers, providing a high-tech, 
+    interactive way to visualize design choices and make decisions with confidence.
+    <br>
+    The business could operate online with a user-friendly platform where clients upload their home's blueprints 
+    or dimensions, and then choose from various design templates or customize their space from scratch. Additional 
+    services might include consultations with professional designers and integration with furniture retailers for 
+    easy purchasing options right from the VR experience.
+</p>
 <form action="/generate" method="post">
-    <input type="text" name="idea" placeholder="Enter your idea here">
+    <style>
+        /* Style for the placeholder */
+        input[type="text"]::placeholder {
+            vertical-align: top; /* Aligns placeholder to the top */
+        }
+    </style>
+    <input type="text" name="idea" placeholder="Enter your idea here." style="width: 80%; height: 200px;">
+    <br>
     <input type="submit" value="Submit">
 </form>
 </body>

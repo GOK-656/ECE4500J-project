@@ -5,20 +5,65 @@
     <title>BMC Generator</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
-<nav>
-    <a href="/">Home</a>
-    <a href="/generate">Generate</a>
-    <a href="/submit">Guide</a>
-</nav>
 <body>
+<nav>
+    <div class="nav-title">Software Platform for the Development and Testing of Entrepreneurship Ideas</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/generate">Generate</a>
+        <a href="/submit">Guide</a>
+    </div>
+</nav>
+<header>
+    <div class="container">
+        <h1>Create a Personalized Business Model Canvas in</h1>
+        <h1 style="color: blue;">15 seconds</h1>
+        <p style="font-size: 24px; color: grey;"><b>Save time, reduce errors, and boost your business with our Business Model Canvas generator</b></p>
+        <!--<a href="#" class="cta-button">CREATE YOUR CANVAS</a>-->
+        <button style="width: 500px; height: auto;" onclick="scrollToBottom()"><b>CREATE YOUR BUSINESS MODEL CANVAS NOW</b></button>
+        <script>
+            function scrollToBottom() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        </script>
+        <p><i>Sponsored by: UM-SJTU Joint Institute</i></p>
+        <img src="static/images/umji.jpg" alt="umji" title="umji" width="20%" height="auto">
+    </div>
+</header>
+<div class="container">
+    <br>
+<img src="static/images/BMC_icon.jpg" alt="BMC image" title="BMC image" width="70%" height="auto">
+</div>
+
 <div class="container-index">
     <div class="title">
-        <p>Software Platform for the Development and Testing of Entrepreneurship Ideas</p>
+        <p>A cutting-edge software platform that leverages generative AI to enhance the <br>efficiency and accuracy of generating and validating entrepreneurial ideas</p>
     </div>
+    <style>
+        .button {
+            display: inline-block;  /* Makes each button appear in line */
+            margin-right: 60px;     /* Optional: Adds space between the buttons */
+        }
+    </style>
     <div class="options">
-        <a class="button" href="/generate">Generate</a>
-        <a class="button" href="/submit">Guide</a>
+        <a class="button" href="/generate"><b>Generate Business Model Canvas with Existing Business Plan</b></a>
+        <a class="button" href="/submit"><b>Generate Business Model Canvas with Expert Guidance</b></a>
     </div>
+    <p style="text-align: left;"> <b>Group 10</b>
+        <br>
+        <b>Group Members:</b>
+        <br>
+        Yujie Guan, Yinghui He, Yifan Li, Zheng Li, Tianju Wang
+        <br>
+        <b>Sponsors:</b>
+        <br>
+        Prof. Pradeep Ray, Prof. Kwee-Yan Teh
+        <br>
+        <b>Section Instructor:</b>
+        <br>
+        Chong Han
+        <br>
+    </p>
 </div>
 </body>
 </html>

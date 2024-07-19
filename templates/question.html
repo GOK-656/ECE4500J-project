@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>BMC Generator</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <style>
+        .center-text {
+            text-align: center; /* Centers text horizontally within the element */
+        }
+    </style>
 </head>
-<nav>
+<!--<nav>
     <a href="/">Home</a>
     <a href="/generate">Generate</a>
     <a href="/submit">Guide</a>
-</nav>
+</nav>-->
 <body>
+    <nav>
+        <div class="nav-title">Software Platform for the Development and Testing of Entrepreneurship Ideas</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/generate">Generate</a>
+            <a href="/submit">Guide</a>
+        </div>
+    </nav>
 <!-- a form with six questions -->
+<p class="center-text">Please answer the following questions based on your business idea.</p>
 <div class="form-container">
         <form action="/submit" method="post">
             <div class="form-group">
