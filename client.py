@@ -1,63 +1,66 @@
+from openai import OpenAI
 from collections import deque
-import anthropic
-from process import load_examples
-from process import extract_json_content
+from process import load_examples, extract_json_content
+import json
 
 class Client:
     def __init__(self):
-        self.client = anthropic.Anthropic(
-            api_key="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"
+        KIMI_API_KEY = 'sk-rxptwe2HlYmsCJftVB4kILBUUd7bLM4bZdGny3NP1e2sXrh2'
+        self.client = OpenAI(
+            api_key=f"{KIMI_API_KEY}",
+            base_url="https://api.moonshot.cn/v1",
         )
+
         self.examples = load_examples()
+        self.setting = [
+            {"role": "system", "content": "You are a professional business consultant. You are helping a client to "
+                                          "build a business model canvas (BMC). You should return as json format for "
+                                          "each of the keys: key_partners, key_activities, key_resources, "
+                                          "value_proposition, customer_relationship, channels, customer_segments, "
+                                          "cost_structure, revenue_streams according to the information provided. "
+                                          "Each key should be a list of strings. The client will provide you with the "
+                                          "information needed to generate the BMC. You should generate the BMC based "
+                                          "on the information provided by the client. If the client asks you to modify "
+                                          "a specific key, you should modify that key and keep everything else "
+                                          "unchanged. "},
+            {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
+        ]
+
         self.history = deque([], maxlen=5)
 
     def chat(self, prompt):
-        if len(self.history) == 0:
-            _messages =[
-                        {"role": "system", "content": "You are a professional business consultant. You are helping a client to build a business model canvas (BMC).",
-                        
-                        "role": "user", "content": prompt + "Here are some examples of industry and BMC:" + self.examples[0] + self.examples[1] + "\n Note: You should ONLY return a JSON dictionary for "
-                        "each of the keys: key_partners, key_activities, key_resources, "
-                        "value_propositions, customer_relationships, channels, customer_segments, "
-                        "cost_structure, revenue_streams according to the information provided. "
-                        "Each key should be a list of strings. The client will provide you with the "
-                        "information needed to generate the BMC. You should generate the BMC based "
-                        "on the information provided by the client. If the client asks you to modify "
-                        "a specific key, you should modify that key and keep everything else "
-                        "unchanged. "}
-                    ]
-        else:
-            _messages = [
-                        {"role": "system", "content": "You are a professional business consultant. You are helping a client to build a business model canvas (BMC).",
-                        
-                        "role": "user", "content": prompt + "Chat history: " + str(list(self.history))
-                        + "\n Note: You should ONLY return a JSON dictionary for "
-                        "each of the keys: key_partners, key_activities, key_resources, "
-                        "value_propositions, customer_relationships, channels, customer_segments, "
-                        "cost_structure, revenue_streams according to the information provided. "
-                        "Each key should be a list of strings. The client will provide you with the "
-                        "information needed to generate the BMC. You should generate the BMC based "
-                        "on the information provided by the client. If the client asks you to modify "
-                        "a specific key, you should modify that key and keep everything else "
-                        "unchanged. "}
-                    ]
-
-        print(_messages)
-        message = self.client.messages.create(
-            model="claude-3-5-sonnet-20240620",
-            max_tokens=2048,
-            messages=_messages
-        )
         self.history.append({
             "role": "user",
-            "content": message
+            "content": prompt
         })
-        output = "\n\n".join(block.text for block in message.content)
-        output = extract_json_content(output)
-        print(output)
+
+        completion = self.client.chat.completions.create(
+            model="moonshot-v1-8k",
+
+            messages=self.setting + list(self.history),
+
+            response_format={"type": "json_object"},
+
+            n=1
+
+        )
+        ans = completion.choices[0].message.content
         self.history.append({
-            "role": "bot",
-            "content": output
+            "role": "assistant",
+            "content": ans
         })
-        print(self.history)
-        return output
+        return ans
+
+
+if __name__ == '__main__':
+    import time
+    client = Client()
+    message = 'Generate a random Business Model Canvas.'
+    response = client.chat(message)
+    print(response)
+    print(client.history)
+    time.sleep(3)
+    message = 'Modify key_partners for a startup company selling drinks. Keep everything else unchanged.'
+    response = client.chat(message)
+    print(response)
+    print(client.history)

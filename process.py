@@ -5,6 +5,8 @@ import json
 def parse_answer(answer):
     # TODO: parse the response by keys of the BMC
     parsed_ans = json.loads(answer)
+    if "bmc" in parsed_ans:
+        parsed_ans = parsed_ans["bmc"]
     new_ans = {}
     for k, v in parsed_ans.items():
         if type(v) is not list:

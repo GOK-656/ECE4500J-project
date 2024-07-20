@@ -66,5 +66,6 @@ def submit():
                                response_time=round(end_time-start_time, 2))
     return render_template('question.html')
 
+
 if __name__ == '__main__':
     app.run()
