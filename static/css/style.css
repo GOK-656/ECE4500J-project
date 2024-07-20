@@ -12,6 +12,13 @@
     --padding-standard: 10px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    border: 1px solid #000;
+}
+
 header {
     text-align: center;
     background-color: #ffffff;
