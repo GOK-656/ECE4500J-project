@@ -4,3 +4,4 @@ __pycache__
 .idea/.gitignore
 kimi-api.txt
 ref
+uploads

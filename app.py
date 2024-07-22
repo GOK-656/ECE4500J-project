@@ -33,6 +33,7 @@ def generate():
 
         if file_names:
             message = request.form['idea'] + "\n" + client.files2text(unique_folder)
+            time.sleep(1)
         else:
             message = request.form['idea']
 
