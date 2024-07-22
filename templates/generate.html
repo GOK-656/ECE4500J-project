@@ -33,7 +33,7 @@
     services might include consultations with professional designers and integration with furniture retailers for 
     easy purchasing options right from the VR experience.
 </p>
-<form action="/generate" method="post">
+<form action="/generate" method="post" enctype="multipart/form-data">
     <style>
         /* Style for the placeholder */
         input[type="text"]::placeholder {
@@ -41,6 +41,9 @@
         }
     </style>
     <input type="text" name="idea" placeholder="Enter your idea here." style="width: 80%; height: 200px;">
+    <br>
+    <label for="file-upload">Upload files:</label>
+    <input type="file" name="file[]" id="file-upload" multiple>
     <br>
     <input type="submit" value="Submit">
 </form>

@@ -1,6 +1,9 @@
-from openai import OpenAI
 from collections import deque
-from process import load_examples, extract_json_content
+from process import load_examples
+from process import extract_json_content
+from openai import OpenAI
+from pathlib import Path
+import xml.etree.ElementTree as ET
 import json
 
 class Client:
@@ -51,6 +54,39 @@ class Client:
         })
         return ans
 
+    def file2text(self, file_path):
+        '''将文件转化为xml格式的txt, 根据anthropic文档使用xml格式更有效'''
+
+        # 调用kimi的api
+        file_object = self.client.files.create(file=Path(file_path), purpose="file-extract")
+        file_content = self.client.files.content(file_id=file_object.id).text
+        content = json.loads(file_content)
+
+        # 创建xml字符串
+        root = ET.Element("files")
+        file_element = ET.SubElement(root, "file")
+        for key, value in content.items():
+            child = ET.SubElement(file_element, key)
+            child.text = value
+        xml_str = ET.tostring(root, encoding='unicode')
+        print("XML file str: \n" + xml_str + "\n")
+        return xml_str
+
+    def files2text(self, folder_path):
+        '''将文件夹内所有文件转化为xml格式的txt, 根据anthropic文档使用xml格式更有效'''
+        root = ET.Element("files")
+        # 调用kimi的api
+        for file_path in Path(folder_path).glob('*'):
+            file_object = self.client.files.create(file=file_path, purpose="file-extract")
+            file_content = self.client.files.content(file_id=file_object.id).text
+            content = json.loads(file_content)
+            file_element = ET.SubElement(root, "file")
+            for key, value in content.items():
+                child = ET.SubElement(file_element, key)
+                child.text = value
+        xml_str = ET.tostring(root, encoding='unicode')
+        print("XML files str: \n" + xml_str + "\n")
+        return xml_str
 
 if __name__ == '__main__':
     import time

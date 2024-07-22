@@ -2,9 +2,14 @@ from flask import Flask
 from flask import render_template, request, url_for
 from client import Client
 from process import parse_answer
+from pathlib import Path
 import time
+import uuid
 
 app = Flask(__name__)
+if not Path('uploads').exists():
+    Path('uploads').mkdir()
+app.config['UPLOAD_FOLDER'] = Path('uploads')
 
 client = Client()
 
@@ -15,7 +20,22 @@ def start():  # put application's code here
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
     if request.method == 'POST':
-        message = request.form['idea']
+        unique_folder = app.config['UPLOAD_FOLDER'] / str(uuid.uuid4())
+        unique_folder.mkdir(parents=True, exist_ok=True)
+
+        uploaded_files = request.files.getlist('file[]')
+        file_names = []
+        for file in uploaded_files:
+            if file.filename != '':
+                file_path = unique_folder / file.filename
+                file.save(file_path)
+                file_names.append(file.filename)
+
+        if file_names:
+            message = request.form['idea'] + "\n" + client.files2text(unique_folder)
+        else:
+            message = request.form['idea']
+
         start_time = time.time()
         answer = client.chat(message)
         end_time = time.time()
@@ -30,7 +50,7 @@ def generate():
                                customer_segments=answer['customer_segments'],
                                cost_structure=answer['cost_structure'],
                                revenue_streams=answer['revenue_streams'],
-                               response_time=round(end_time-start_time, 2))
+                               response_time=round(end_time - start_time, 2))
 
     return render_template('generate.html')
 
