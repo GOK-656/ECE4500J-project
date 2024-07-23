@@ -39,6 +39,7 @@ def generate():
 
         start_time = time.time()
         answer = client.chat(message)
+        print(answer)
         end_time = time.time()
         answer = parse_answer(answer)
         return render_template('bmc.html',
