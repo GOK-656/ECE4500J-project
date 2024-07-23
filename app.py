@@ -88,13 +88,14 @@ def submit():
                                key_partners=answer['key_partners'],
                                key_activities=answer['key_activities'],
                                key_resources=answer['key_resources'],
-                               value_proposition=answer['value_proposition'],
-                               customer_relationship=answer['customer_relationship'],
+                               value_proposition=answer['value_propositions'],
+                               customer_relationship=answer['customer_relationships'],
                                channels=answer['channels'],
                                customer_segments=answer['customer_segments'],
                                cost_structure=answer['cost_structure'],
                                revenue_streams=answer['revenue_streams'],
-                               response_time=round(end_time-start_time, 2))
+                               response_time=round(end_time - start_time, 2))
+
     return render_template('question.html')
 
 
