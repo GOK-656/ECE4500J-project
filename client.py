@@ -19,7 +19,7 @@ class Client:
             {"role": "system", "content": "You are a professional business consultant. You are helping a client to "
                                           "build a business model canvas (BMC). You should return as json format for "
                                           "each of the keys: key_partners, key_activities, key_resources, "
-                                          "value_proposition, customer_relationship, channels, customer_segments, "
+                                          "value_propositions, customer_relationships, channels, customer_segments, "
                                           "cost_structure, revenue_streams according to the information provided. "
                                           "Each key should be a list of strings. The client will provide you with the "
                                           "information needed to generate the BMC. You should generate the BMC based "
