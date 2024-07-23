@@ -8,7 +8,23 @@ def parse_answer(answer):
     if "bmc" in parsed_ans:
         parsed_ans = parsed_ans["bmc"]
     new_ans = {}
+
+    prefix_dict = {
+        "key_partner": "key_partners",
+        "key_activit": "key_activities",
+        "key_resource": "key_resources",
+        "value_proposition": "value_propositions",
+        "customer_relationship": "customer_relationships",
+        "channel": "channels",
+        "customer_segment": "customer_segments",
+        "cost_structure": "cost_structure",
+        "revenue_stream": "revenue_streams"
+    }
     for k, v in parsed_ans.items():
+        for prefix, new_key in prefix_dict.items():
+            if k.startswith(prefix):
+                k = new_key
+                break
         if type(v) is not list:
             new_ans[k] = [v]
         else:

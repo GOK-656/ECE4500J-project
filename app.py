@@ -69,7 +69,16 @@ def submit():
         q8 = request.form['question8']
         q9 = request.form['question9']
         # TODO: construct a message to send to the chatbot
-        message = f"Construct a Business Canvas Model according to the information: {q1} {q2} {q3} {q4} {q5} {q6} {q7} {q8} {q9}"
+        message = (f"Construct a Business Canvas Model according to the question-answer pairs: "
+                   f"What specific customer problem does your product or service solve, and how does it differentiate from competitors? {q1};"
+                   f"Who are your primary target customers, and what are their key characteristics and needs that your offering addresses? {q2};"
+                   f"Which primary channel will you use to reach your target customers, are there any alternatives and why is this the most effective method? {q3};"
+                   f"What type of relationship will you establish with your customers, and what strategies will you use to maintain and enhance these relationships? {q4};"
+                   f"What is your main revenue model, and why is it appropriate for your target market and value proposition? {q5};"
+                   f"Identify the essential resources needed to deliver your value proposition. How do you plan to secure and manage these resources? {q6};"
+                   f"Who are your indispensable partners or suppliers, what will they provide, and how are these partnerships structured to support your business objectives? {q7};"
+                   f"What are the critical activities necessary to support your business model? How do you plan to excel at these activities? {q8};"
+                   f"What are your significant expected costs, and how do you plan to manage efficiency while maintaining quality? {q9}.")
         start_time = time.time()
         answer = client.chat(message)
         end_time = time.time()
