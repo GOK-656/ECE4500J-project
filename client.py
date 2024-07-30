@@ -25,9 +25,9 @@ class Client:
                                           "information needed to generate the BMC. You should generate the BMC based "
                                           "on the information provided by the client. If the client asks you to modify "
                                           "a specific key, you should modify that key and keep everything else "
-                                          "unchanged. "}
+                                          "unchanged. "},
+            {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
         ]
-        # {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
         self.history = deque([], maxlen=5)
 
     def chat(self, prompt):
@@ -35,24 +35,28 @@ class Client:
             "role": "user",
             "content": prompt
         })
+        ans = ''
+        while len(ans.strip()) == 0:
+            input_message = self.setting + list(self.history)
+            print(input_message)
+            completion = self.client.chat.completions.create(
+                model="moonshot-v1-8k",
 
-        input_message = self.setting + list(self.history)
-        print(input_message)
-        completion = self.client.chat.completions.create(
-            model="moonshot-v1-8k",
+                messages=input_message,
 
-            messages=input_message,
+                response_format={"type": "json_object"},
 
-            response_format={"type": "json_object"},
+                n=1
 
-            n=1
-
-        )
-        ans = completion.choices[0].message.content
-        self.history.append({
-            "role": "assistant",
-            "content": ans
-        })
+            )
+            ans = completion.choices[0].message.content
+            if len(ans.strip()) > 0:
+                self.history.append({
+                    "role": "assistant",
+                    "content": ans
+                })
+                break
+            time.sleep(1)
         return ans
 
     def file2text(self, file_path):
