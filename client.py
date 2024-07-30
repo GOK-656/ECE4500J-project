@@ -37,10 +37,12 @@ class Client:
             "content": prompt
         })
 
+        input_message = self.setting + list(self.history)
+        print(input_message)
         completion = self.client.chat.completions.create(
             model="moonshot-v1-8k",
 
-            messages=self.setting + list(self.history),
+            messages=input_message,
 
             response_format={"type": "json_object"},
 
