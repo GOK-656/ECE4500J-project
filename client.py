@@ -50,6 +50,7 @@ class Client:
 
         )
         ans = completion.choices[0].message.content
+        print(ans)
         self.history.append({
             "role": "assistant",
             "content": ans
