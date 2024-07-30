@@ -25,10 +25,9 @@ class Client:
                                           "information needed to generate the BMC. You should generate the BMC based "
                                           "on the information provided by the client. If the client asks you to modify "
                                           "a specific key, you should modify that key and keep everything else "
-                                          "unchanged. "},
-            {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
+                                          "unchanged. "}
         ]
-
+        # {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
         self.history = deque([], maxlen=5)
 
     def chat(self, prompt):
