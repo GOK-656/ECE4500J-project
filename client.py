@@ -5,6 +5,7 @@ from openai import OpenAI
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import json
+import time
 
 class Client:
     def __init__(self):
