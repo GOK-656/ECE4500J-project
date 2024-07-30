@@ -4,7 +4,7 @@ import json
 
 def parse_answer(answer):
     # TODO: parse the response by keys of the BMC
-    parsed_ans = json.loads(answer)
+    parsed_ans = json.loads(extract_json_content(answer))
     if "bmc" in parsed_ans:
         parsed_ans = parsed_ans["bmc"]
     new_ans = {}
