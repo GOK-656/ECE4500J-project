@@ -1,17 +1,35 @@
 from flask import Flask
-from flask import render_template, request, url_for
+from flask import render_template, request, url_for, redirect, session
 from client import Client
 from process import parse_answer
 from pathlib import Path
 import time
 import uuid
+import shutil
+from threading import Thread
+import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 if not Path('uploads').exists():
     Path('uploads').mkdir()
 app.config['UPLOAD_FOLDER'] = Path('uploads')
 
 client = Client()
+
+tasks = {}
+
+def generate_answer(message, task_id):
+    try:
+        answer = client.chat(message)
+        tasks[task_id]['answer'] = answer
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        tasks[task_id]['answer'] = "Error"
+        tasks[task_id]['error'] = e
+    finally:
+        if tasks[task_id]['answer'] == "Error":
+            print(f"Task {task_id} did not complete successfully.")
 
 @app.route('/')
 def start():  # put application's code here
@@ -20,9 +38,13 @@ def start():  # put application's code here
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
     if request.method == 'POST':
-        unique_folder = app.config['UPLOAD_FOLDER'] / str(uuid.uuid4())
-        unique_folder.mkdir(parents=True, exist_ok=True)
+        task_id = str(uuid.uuid4())
+        tasks[task_id] = {}
+        session['task_id'] = task_id
+        session['start_time'] = time.time()
 
+        unique_folder = app.config['UPLOAD_FOLDER'] / task_id
+        unique_folder.mkdir(parents=True, exist_ok=True)
         uploaded_files = request.files.getlist('file[]')
         file_names = []
         for file in uploaded_files:
@@ -36,10 +58,41 @@ def generate():
             time.sleep(1)
         else:
             message = request.form['idea']
+        shutil.rmtree(unique_folder)
 
-        start_time = time.time()
-        answer = client.chat(message)
-        end_time = time.time()
+        session['message'] = message
+        Thread(target=generate_answer, args=(message,task_id)).start()
+        return redirect(url_for('loading'))
+
+    return render_template('generate.html')
+
+@app.route('/loading')
+def loading():
+    start_time = session.get('start_time', time.time())
+    elapsed_time = round(time.time() - start_time, 2)
+    return render_template('loading.html', start_time=start_time,elapsed_time=elapsed_time)
+
+@app.route('/check_status')
+def check_status():
+    task_id = session.get('task_id')
+    if not task_id or (task_id in tasks and 'answer' in tasks[task_id]):
+        return {'result_ready': True}
+    else:
+        return {'result_ready': False}
+
+@app.route('/result')
+def result():
+    if task_id := session.get('task_id'):
+        task = tasks[task_id]
+    else:
+        return render_template('index.html')
+    if 'answer' in task:
+        answer = task['answer']
+        if answer == "Error":
+            print(tasks)
+            tasks.pop(task_id)
+            session.pop('task_id')
+            return render_template("error.html", error_message=task['error'])
         answer = parse_answer(answer)
         return render_template('bmc.html',
                                key_partners=answer['key_partners'],
@@ -51,9 +104,9 @@ def generate():
                                customer_segments=answer['customer_segments'],
                                cost_structure=answer['cost_structure'],
                                revenue_streams=answer['revenue_streams'],
-                               response_time=round(end_time - start_time, 2))
-
-    return render_template('generate.html')
+                               response_time=round(time.time() - session['start_time'], 2))
+    else:
+        return redirect(url_for('loading'))
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
@@ -78,22 +131,13 @@ def submit():
                    f"Who are your indispensable partners or suppliers, what will they provide, and how are these partnerships structured to support your business objectives? {q7};"
                    f"What are the critical activities necessary to support your business model? How do you plan to excel at these activities? {q8};"
                    f"What are your significant expected costs, and how do you plan to manage efficiency while maintaining quality? {q9}.")
-        start_time = time.time()
-        answer = client.chat(message)
-        end_time = time.time()
-        print(answer)
-        answer = parse_answer(answer)
-        return render_template('bmc.html',
-                               key_partners=answer['key_partners'],
-                               key_activities=answer['key_activities'],
-                               key_resources=answer['key_resources'],
-                               value_proposition=answer['value_propositions'],
-                               customer_relationship=answer['customer_relationships'],
-                               channels=answer['channels'],
-                               customer_segments=answer['customer_segments'],
-                               cost_structure=answer['cost_structure'],
-                               revenue_streams=answer['revenue_streams'],
-                               response_time=round(end_time - start_time, 2))
+        task_id = str(uuid.uuid4())
+        tasks[task_id] = {}
+        session['task_id'] = task_id
+        session['start_time'] = time.time()
+        session['message'] = message
+        Thread(target=generate_answer, args=(message,task_id)).start()
+        return redirect(url_for('loading'))
 
     return render_template('question.html')
 
