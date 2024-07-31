@@ -23,7 +23,7 @@
         }
     </style>
     <script>
-        let startTime = new Date().getTime();
+        let startTime = {{ start_time }} * 1000;
 
         function updateElapsedTime() {
             let currentTime = new Date().getTime();
