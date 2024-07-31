@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        .spinner {
+            margin: 100px auto;
+            width: 50px;
+            height: 50px;
+            border: 6px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 6px solid #3498db;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        let startTime = new Date().getTime();
+
+        function updateElapsedTime() {
+            let currentTime = new Date().getTime();
+            let elapsedTime = (currentTime - startTime) / 1000;
+            document.getElementById('elapsed-time').innerText = elapsedTime.toFixed(2);
+        }
+
+        function checkResult() {
+            fetch('{{ url_for("check_status") }}')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result_ready) {
+                        window.location.href = '{{ url_for("result") }}';
+                    }
+                });
+        }
+
+        setInterval(updateElapsedTime, 100);  // Update time every 0.1 second
+        setInterval(checkResult, 2000);  // Check for result every 2 seconds
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <div class="spinner"></div>
+        <p>Generating your business model canvas, please wait...</p>
+        <p>Elapsed time: <span id="elapsed-time">{{ elapsed_time }}</span> seconds</p>
+        <p><a href="{{ url_for('result') }}">Click here if not redirected automatically</a></p>
+    </div>
+</body>
+</html>
