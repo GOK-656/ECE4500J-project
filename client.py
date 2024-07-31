@@ -10,10 +10,15 @@ import time
 class Client:
     def __init__(self):
         KIMI_API_KEY = 'sk-rxptwe2HlYmsCJftVB4kILBUUd7bLM4bZdGny3NP1e2sXrh2'
-        self.client = OpenAI(
+        DEEPSEEK_API_KEY = 'sk-697c7886451f48ec92f35bdefc368e5e'
+        self.kimi_client = OpenAI(
             api_key=f"{KIMI_API_KEY}",
             base_url="https://api.moonshot.cn/v1",
-        )
+        ) # For OCR
+        self.deepseek_client = OpenAI(
+            api_key=f"{DEEPSEEK_API_KEY}",
+            base_url="https://api.deepseek.com/v1",
+        ) # For Chat
 
         self.examples = load_examples()
         self.setting = [
@@ -39,9 +44,8 @@ class Client:
         ans = ''
         while len(ans.strip()) == 0:
             input_message = self.setting + list(self.history)
-            print(input_message)
-            completion = self.client.chat.completions.create(
-                model="moonshot-v1-8k",
+            completion = self.deepseek_client.chat.completions.create(
+                model="deepseek-chat",
 
                 messages=input_message,
 
@@ -51,6 +55,7 @@ class Client:
 
             )
             ans = completion.choices[0].message.content
+            print(f"Answer: {ans}")
             if len(ans.strip()) > 0:
                 self.history.append({
                     "role": "assistant",
@@ -64,8 +69,8 @@ class Client:
         '''将文件转化为xml格式的txt, 根据anthropic文档使用xml格式更有效'''
 
         # 调用kimi的api
-        file_object = self.client.files.create(file=Path(file_path), purpose="file-extract")
-        file_content = self.client.files.content(file_id=file_object.id).text
+        file_object = self.kimi_client.files.create(file=Path(file_path), purpose="file-extract")
+        file_content = self.kimi_client.files.content(file_id=file_object.id).text
         content = json.loads(file_content)
 
         # 创建xml字符串
@@ -83,8 +88,8 @@ class Client:
         root = ET.Element("files")
         # 调用kimi的api
         for file_path in Path(folder_path).glob('*'):
-            file_object = self.client.files.create(file=file_path, purpose="file-extract")
-            file_content = self.client.files.content(file_id=file_object.id).text
+            file_object = self.kimi_client.files.create(file=file_path, purpose="file-extract")
+            file_content = self.kimi_client.files.content(file_id=file_object.id).text
             content = json.loads(file_content)
             file_element = ET.SubElement(root, "file")
             for key, value in content.items():
