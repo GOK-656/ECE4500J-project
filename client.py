@@ -15,10 +15,11 @@ class Client:
             api_key=f"{KIMI_API_KEY}",
             base_url="https://api.moonshot.cn/v1",
         ) # For OCR
-        self.deepseek_client = OpenAI(
-            api_key=f"{DEEPSEEK_API_KEY}",
-            base_url="https://api.deepseek.com/v1",
-        ) # For Chat
+        # self.deepseek_client = OpenAI(
+        #     api_key=f"{DEEPSEEK_API_KEY}",
+        #     base_url="https://api.deepseek.com/v1",
+        # ) # For Chat
+        self.deepseek_client = self.kimi_client
 
         self.examples = load_examples()
         self.setting = [
@@ -45,14 +46,14 @@ class Client:
         while len(ans.strip()) == 0:
             input_message = self.setting + list(self.history)
             completion = self.deepseek_client.chat.completions.create(
-                model="deepseek-chat",
+                # model="deepseek-chat",
+                model="moonshot-v1-8k",
 
                 messages=input_message,
 
                 response_format={"type": "json_object"},
 
-                n=1
-
+                n=1,
             )
             ans = completion.choices[0].message.content
             print(f"Answer: {ans}")
