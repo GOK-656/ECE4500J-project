@@ -7,6 +7,98 @@
     <meta name="description" content="Business Model Canvas Template">
     <link href='http://fonts.googleapis.com/css?family=Headland+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function exportAsImage() {
+            html2canvas(document.getElementById("bizcanvas")).then(canvas => {
+                const imgData = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.download = "bmc.png";
+                link.href = imgData;
+                link.click();
+            });
+        }
+
+        function exportAsJson() {
+            const bmcData = {
+                key_partners: Array.from(document.querySelectorAll('.key-partners ol li')).map(li => li.textContent),
+                key_activities: Array.from(document.querySelectorAll('.key-activities ol li')).map(li => li.textContent),
+                value_proposition: Array.from(document.querySelectorAll('.value-proposition ol li')).map(li => li.textContent),
+                customer_relationship: Array.from(document.querySelectorAll('.customer-relationship ol li')).map(li => li.textContent),
+                customer_segments: Array.from(document.querySelectorAll('.customer-segments ol li')).map(li => li.textContent),
+                key_resources: Array.from(document.querySelectorAll('.key-resources ol li')).map(li => li.textContent),
+                channels: Array.from(document.querySelectorAll('.channels ol li')).map(li => li.textContent),
+                cost_structure: Array.from(document.querySelectorAll('.cost-structure ol li')).map(li => li.textContent),
+                revenue_streams: Array.from(document.querySelectorAll('.revenue-streams ol li')).map(li => li.textContent)
+            };
+            
+            const jsonStr = JSON.stringify(bmcData, null, 2);
+            const blob = new Blob([jsonStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'bmc.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const canvas = await html2canvas(document.getElementById("bizcanvas"));
+            const imgData = canvas.toDataURL("image/png");
+
+            doc.addImage(imgData, 'PNG', 10, 10, 180, 0);
+            doc.save("bmc.pdf");
+        }
+
+        function exportAsMarkdown() {
+            const bmcData = {
+                key_partners: Array.from(document.querySelectorAll('.key-partners ol li')).map(li => li.textContent),
+                key_activities: Array.from(document.querySelectorAll('.key-activities ol li')).map(li => li.textContent),
+                value_proposition: Array.from(document.querySelectorAll('.value-proposition ol li')).map(li => li.textContent),
+                customer_relationship: Array.from(document.querySelectorAll('.customer-relationship ol li')).map(li => li.textContent),
+                customer_segments: Array.from(document.querySelectorAll('.customer-segments ol li')).map(li => li.textContent),
+                key_resources: Array.from(document.querySelectorAll('.key-resources ol li')).map(li => li.textContent),
+                channels: Array.from(document.querySelectorAll('.channels ol li')).map(li => li.textContent),
+                cost_structure: Array.from(document.querySelectorAll('.cost-structure ol li')).map(li => li.textContent),
+                revenue_streams: Array.from(document.querySelectorAll('.revenue-streams ol li')).map(li => li.textContent)
+            };
+            
+            let markdownContent = `# Business Model Canvas\n\n`;
+
+            for (const [key, value] of Object.entries(bmcData)) {
+                markdownContent += `## ${key.replace('_', ' ')}\n`;
+                value.forEach(item => {
+                    markdownContent += `- ${item}\n`;
+                });
+                markdownContent += `\n`;
+            }
+
+            const blob = new Blob([markdownContent], { type: "text/markdown" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'bmc.md';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -111,6 +203,12 @@
             <input type="text" name="idea" placeholder="Modify response">
             <input type="submit" value="Submit">
         </form>
+    </div>
+    <div class="button-container">
+        <button onclick="exportAsImage()">Export as Image</button>
+        <button onclick="exportAsJson()">Export as JSON</button>
+        <button onclick="exportAsPDF()">Export as PDF</button>
+        <button onclick="exportAsMarkdown()">Export as Markdown</button>
     </div>
 </div>
 
