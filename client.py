@@ -35,7 +35,7 @@ class Client:
                                           "on the information provided by the client. If the client asks you to modify "
                                           "a specific key, you should modify that key and keep everything else "
                                           "unchanged. "},
-            {"role": "system", "content": "Here are some good BMC examples: " + self.examples[0] + self.examples[1]}
+            {"role": "system", "content": "Here are some good BMC examples (Please reply in the format of the example, without adding or removing keys): \n" + self.examples[0] + "\n" + self.examples[1]}
         ]
         self.history = deque([], maxlen=5)
 
